@@ -32,22 +32,13 @@ API client can be initialized as following.
 $userKey = "userKey"; // User Key
 $scriptKey = "scriptKey"; // Script Key
 
-$client = new BroScriptClient($userKey, $scriptKey);
+//The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
+$client = BroScriptClient::getInstance($userKey, $scriptKey);
 ```
 
 # Class Reference
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [APIController](#api_controller)
-
-## <a name="api_controller"></a>![Class: ](http://apidocs.io/img/class.png ".APIController") APIController
-
-
-#### Get singleton instance
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-```php
-$client = $client->getClient();
-```
 
 ### <a name="clean_history"></a>![Method: ](http://apidocs.io/img/method.png ".APIController.cleanHistory") cleanHistory
 

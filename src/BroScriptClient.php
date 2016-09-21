@@ -15,20 +15,16 @@ use BroScriptLib\Controllers;
 class BroScriptClient
 {
     /**
-     * Constructor with authentication and configuration parameters
+     * Singleton access to API controller
+     * @param null $userKey
+     * @param null $scriptKey
+     * @return Controllers\APIController The *Singleton* instance
      */
-    public function __construct($userKey = NULL, $scriptKey = NULL)
+    public static function getInstance($userKey = NULL, $scriptKey = NULL)
     {
         Configuration::$userKey = $userKey ? $userKey : Configuration::$userKey;
         Configuration::$scriptKey = $scriptKey ? $scriptKey : Configuration::$scriptKey;
-    }
- 
-    /**
-     * Singleton access to API controller
-     * @return Controllers\APIController The *Singleton* instance
-     */
-    public function getClient()
-    {
+
         return Controllers\APIController::getInstance();
     }
 }
