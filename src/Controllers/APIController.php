@@ -149,9 +149,10 @@ class APIController extends BaseController {
 
         return $response->body;
     }
-        
+
     /**
      * Get answer
+     * @param  string     $msg                Message
      * @param  string     $chatId             Optional parameter: Chat id
      * @param  array      $contact            Optional parameter: Object with information about concat
      * @param  array      $external           Optional parameter: Object with information about external
@@ -161,6 +162,7 @@ class APIController extends BaseController {
      * @throws APIException Thrown if API call fails
      */
     public function answers (
+                $msg,
                 $chatId = NULL,
                 $contact = NULL,
                 $external = NULL,
@@ -175,6 +177,7 @@ class APIController extends BaseController {
 
         //process optional query parameters
         APIHelper::appendUrlWithQueryParameters($_queryBuilder, array (
+            'msg'            => $msg,
             'chat_id'        => $chatId,
             'contact'        => $contact,
             'external'       => $external,
